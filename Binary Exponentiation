@@ -1,0 +1,28 @@
+// Recursive Approach
+
+typedef long long ll;
+ll binpowR(ll a, ll n){
+    if (n == 0) {
+        return 1;
+    }
+    ll ans = pow(a, n/2);
+    if (n%2) {
+        return ans*ans*a;
+    }
+    else 
+        return ans*ans;
+}
+
+// Iterative Approach
+ll binpowI(ll a, ll n){
+    int ans = 1;
+    while (n > 0) {
+        
+        if (n&1){
+            ans *= a;
+        }
+        a *= a;
+        n >>= 1;
+    }
+    return ans;
+}
